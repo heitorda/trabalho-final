@@ -1,0 +1,44 @@
+@charset "UTF8";
+
+
+/* configurações gerais */
+*{
+    margin: 0px;
+}
+
+
+/* header  */
+header{
+    position: sticky;
+    height: 40px;
+
+    padding: 5px;
+}
+
+header {
+    text-align: right;
+}
+
+header > a{
+text-decoration: none;
+color: black;
+}
+
+    /* nav  */
+    nav{
+        background-color: #6F8695;
+
+        
+    }
+    nav > a{
+        color: white;
+        font-size: 36px;
+        text-decoration: none;
+        font-weight: 500;
+        font-family: "Open Sans", sans-serif;
+        
+
+        letter-spacing: 0%;
+
+        padding-right: 10px;
+    }
