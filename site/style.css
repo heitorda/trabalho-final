@@ -7,38 +7,131 @@
 }
 
 
-/* header  */
-header{
-    position: sticky;
-    height: 40px;
-
-    padding: 5px;
-}
-
+/* Header */
 header {
-    text-align: right;
+    position: sticky;
+    top: 0; /* Faz o header "grudar" no topo ao rolar a página */
+    display: flex; /* Torna o header um contêiner flexível */
+    justify-content: space-between; /* Alinha os itens: logo à esquerda, links à direita */
+    align-items: center; /* Centraliza verticalmente os itens no header */
+    padding: 10px 20px; /* Espaçamento interno */
+    background-color: #fff; /* Cor de fundo opcional */
+    height: 162px;    /* Altura total do header */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra leve */
 }
 
-header > a{
-text-decoration: none;
-color: black;
+#logo {
+    width: 500px; /* Define o tamanho da logo */
+    height: 500px;
+    background: rgba(0, 0, 0, 0) url(imagens/logofuu.png) center center;
+    background-size: cover;
+    border-radius: 50%; /* Deixa a logo redonda */
 }
 
-    /* nav  */
-    nav{
-        background-color: #6F8695;
+#infodousuario {
+    display: flex; /* Torna o container flexível */
+    gap: 20px; /* Espaçamento entre os links */
+}
 
-        
-    }
-    nav > a{
-        color: white;
-        font-size: 36px;
-        text-decoration: none;
-        font-weight: 500;
-        font-family: "Open Sans", sans-serif;
-        
+#infodousuario > a {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Espaço entre o ícone e o texto */
+    color: black;
+    text-decoration: none;
+    font-size: 36px;
+    font-family: "Open Sans", sans-serif;
+}
 
-        letter-spacing: 0%;
+#infodousuario > a:hover {
+    color: #007BFF;
+}
 
-        padding-right: 10px;
-    }
+#search-bar input {
+    width: 100%;
+    max-width: 500px;
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 23px;
+    font-size: 40px;
+    margin-left: -110px;
+}
+
+
+
+/* nav  */
+nav {
+    background-color: #6F8695;
+    height: 110px;
+
+    display: flex; /* Torna o nav um contêiner flexível */
+    justify-content: center; /* Centraliza os itens horizontalmente */
+    align-items: center; /* Centraliza os itens verticalmente */
+}
+
+nav > a {
+    color: white;
+    font-size: 36px;
+    text-decoration: none;
+    font-weight: 500;
+    font-family: "Open Sans", sans-serif;
+
+    margin: 0 15px; /* Espaçamento horizontal entre os links */
+
+    transition: 0.5s;
+}
+nav > a:hover {
+    text-decoration: underline;
+
+    font-size: 39px;
+
+    transition: 0.5s;
+}
+
+/* Produtos */
+div.produtos {
+    display: grid;
+    grid-template-columns: repeat(2, 300px);
+    gap: 30px 700px;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 0;
+    width: fit-content;
+    margin: 0 auto;
+    background-color: #f9f9f9;
+    justify-items: center;
+}
+
+/* Placeholder para os produtos */
+div.produto {
+    background-color: gray;
+    width: 500px; /* Largura do placeholder */
+    height: 500px; /* Altura do placeholder */
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 10px; /* Bordas arredondadas */
+
+    transition: 0.5s;
+}
+
+div.produto:hover{
+    width: 520px;
+    height: 520px;
+
+    transition: 0.5s;
+}
+
+
+
+
+
+/* footer */
+footer{
+    background-color: black;
+    
+    text-align: center; 
+    color: white;
+    
+}
+
+
+
