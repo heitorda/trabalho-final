@@ -132,7 +132,7 @@ div.produto {
     transition: 0.5s;
 }
 
-div.produto:hover{
+img, div.produto:hover{
     width: 320px;
     height: 320px;
 
@@ -209,13 +209,31 @@ div.produto:hover{
 
 
 /* footer */
-footer{
-    background-color: black;
-    
-    text-align: left; 
+footer {
+    display: flex;
+    justify-content: space-between; /* Garante o alinhamento entre os itens */
+    align-items: center; /* Centraliza verticalmente */
+    padding: 20px;
+    background-color: black; /* Cor de fundo do rodapé */
+    border-top: 1px solid #ddd; /* Linha separadora opcional */
+
     color: white;
-    
 }
+
+#Contato {
+    text-align: left; /* Garante que o texto fique alinhado à esquerda */
+}
+
+#Contato ul {
+    list-style-type: none; /* Remove as bolinhas da lista */
+    padding: 0; /* Remove o padding padrão */
+}
+
+#redesocial img {
+    height: 50px; /* Ajusta a altura da logo */
+    max-width: 100px; /* Garante que a largura não ultrapasse 100px */
+}
+
 
 footer h1 {
     font-size: 1.5em;
@@ -223,14 +241,4 @@ footer h1 {
 
 footer > div{
     width: 14   0px;
-}
-
-footer#contato{
-    display: flex;
-    left: 0px;
-}
-
-footer#redesocial{
-    display: flex;
-    right: 0px;
 }
