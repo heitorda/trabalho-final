@@ -168,6 +168,7 @@ div.produto:hover{
 .input-group label {
     display: block;
     font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
     color: #333;
     margin-bottom: 5px;
 }
@@ -210,7 +211,25 @@ div.produto:hover{
 footer{
     background-color: black;
     
-    text-align: center; 
+    text-align: left; 
     color: white;
     
+}
+
+footer h1 {
+    font-size: 1.5em;
+}
+
+footer > div{
+    width: 14   0px;
+}
+
+footer#contato{
+    display: flex;
+    left: 0px;
+}
+
+footer#redesocial{
+    display: flex;
+    right: 0px;
 }
