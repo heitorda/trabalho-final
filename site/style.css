@@ -64,6 +64,8 @@ header {
     color: #007BFF;
 }
 
+/* configuração da barra de pesquisa */
+
 #search-bar input {
     width: 100%;
     max-width: 500px;
