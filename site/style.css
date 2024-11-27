@@ -110,31 +110,43 @@ nav > a:hover {
 /* Produtos */
 div.produtos {
     display: grid;
-    grid-template-columns: repeat(3, 10%);
+    grid-template-columns: repeat(2, 70%);
     gap: 10% 40%;
     justify-content: center;
     align-items: center;
-    padding: 15% 14%;
+    padding: 16% 14%;
     width: fit-content;
     margin: 0 auto;
-    background-color: #f9f9f9;
     justify-items: center;
 }
 
 /* Placeholder para os produtos */
-div.produto {
+ div.produto {
     background-color: gray;
-    width: 300px; /* Largura do placeholder */
-    height: 300px; /* Altura do placeholder */
-    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+    width: 45vh; /* Largura do placeholder */
+    max-width: 50vh;
+    min-width: 30vh;
+    height: 45vh; /* Altura do placeholder */
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.2);
     border-radius: 10px; /* Bordas arredondadas */
+
+    transition: 0.5s;
+}
+div.produto > img {
+    width: 45vh;
+    height: 45vh;
+}
+
+div.produto > img:hover{
+    width: 50vh;
+    height: 50vh;
 
     transition: 0.5s;
 }
 
 img, div.produto:hover{
-    width: 320px;
-    height: 320px;
+    width: 50vh;
+    height: 50vh;
 
     transition: 0.5s;
 }
