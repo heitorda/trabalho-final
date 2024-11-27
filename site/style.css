@@ -114,7 +114,7 @@ div.produtos {
     gap: 10% 40%;
     justify-content: center;
     align-items: center;
-    padding: 16% 14%;
+    padding: 10vh 0vh 40vh 0vh;
     width: fit-content;
     margin: 0 auto;
     justify-items: center;
@@ -123,8 +123,7 @@ div.produtos {
 /* Placeholder para os produtos */
  div.produto {
     width: 50vh; /* Largura do placeholder */
-    max-width: 50vh;
-    min-width: 30vh;
+    max-width: 60vh;
     height: 50vh; /* Altura do placeholder */
     margin-bottom: 35px;
     box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.2);
@@ -134,18 +133,21 @@ div.produtos {
 div.produto > img {
     width: 50vh;
     height: 50vh;
-}
-
-div.produto > img:hover{
-    width: 65vh;
-    height: 65vh;
+    margin-bottom: 30px;
 
     transition: 1s;
 }
 
-img, div.produto:hover{
-    width: 65vh;
-    height: 65vh;
+div.produto > img:hover{
+    width: 53vh;
+    height: 53vh;
+
+    transition: 1s;
+}
+
+div.produto:hover{
+    width: 53vh;
+    height: 53vh;
 
     transition: 1s;
 }
