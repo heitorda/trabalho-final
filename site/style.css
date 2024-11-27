@@ -203,7 +203,16 @@ img, div.produto:hover{
     background-color: #5c7181;
 }
 /* carrinho de compra */
-
+.product{
+    border: 1px solid rgb(255, 255, 255);
+    padding: 10px;
+    margin-bottom: 10px;
+}
+#cart{
+    margin-top: 20px;
+    border-top: 2px solid black;
+    padding-top: 10px;
+}
 
 
 
