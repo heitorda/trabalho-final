@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrinho</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h2>carrinho de compras</h2>
+    <form method="post" action="cadvenda.php">
+        <div id="Cart">
+            <ul id="cart-items"></ul>
+            <p id="total">Total: R$ 0,00</p>
+            <p><button name="pagar">PAGAR</button></p>
+        </div>
+    </form>
+
+    <script>
+
+        document.addEventListener('DOMcontentLoaded', function() {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+            function loadCart() {
+                const cartItems = document.get
+            }
+        })
+    </script>
+    
+</body>
+</html>
