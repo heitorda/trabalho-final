@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,9 +22,49 @@
             let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
             function loadCart() {
-                const cartItems = document.get
+                const cartItems = document.getElementById('cart-items');
+                const totalElement = document.getElementById('total');
+                let total = 0;
+
+                cartItems.innerHTML = ''; // limpar o carrinho
+
+                if (cart.length ===0) {
+                    cartItems.innerHTML = '<li>Carrinho vazio</li>';
+                    totalElement.textContent = 'total: R$ 0,00';
+                    return;
+                }
+
+                cart.forEach(item => {
+                    const listitem = document.createElement('li');
+                    listitem.textContent = `$(item.name) - quantidade: $(item.quantity) - preço: R$ 
+                    ${(item.price * item.quantity).toFixed(2)}`;
+                    cartItems.appendChild(listitem);
+                });
+
+                totalElement.textContent = 'total: R$ $ {total.toFixed(2)}';
             }
-        })
+
+            loadCart();
+
+            document.querySelector('button[name="pagar"]').addEventListener('click', function(event){
+                event.preventDefault();
+
+                alert('compra realizada com sucesso!');
+
+                const Xhr = new XMLHttpRequest();
+                Xhr.open("POST", "cadvenda.php", true);
+                Xhr.setRequestHeader("content.Type", "application/json;charset=UTF-8");
+                Xhr.onreadystatechange = function () {
+                    if (Xhr.readyState === 4 && Xhr.status === 200) {
+                        console.log("dados enviados com sucesso")
+                    }
+                };
+                Xhr.send(JSON.stringify(cart));
+                localStorage.removeItem('cart');
+                cart = [];
+                loadCart();
+            });
+        });
     </script>
     
 </body>
