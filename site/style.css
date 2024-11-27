@@ -122,32 +122,32 @@ div.produtos {
 
 /* Placeholder para os produtos */
  div.produto {
-    background-color: gray;
-    width: 45vh; /* Largura do placeholder */
+    width: 50vh; /* Largura do placeholder */
     max-width: 50vh;
     min-width: 30vh;
-    height: 45vh; /* Altura do placeholder */
+    height: 50vh; /* Altura do placeholder */
+    margin-bottom: 35px;
     box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.2);
     border-radius: 10px; /* Bordas arredondadas */
     transition: 0.5s;
 }
 div.produto > img {
-    width: 45vh;
-    height: 45vh;
+    width: 50vh;
+    height: 50vh;
 }
 
 div.produto > img:hover{
-    width: 50vh;
-    height: 50vh;
+    width: 65vh;
+    height: 65vh;
 
-    transition: 0.5s;
+    transition: 1s;
 }
 
 img, div.produto:hover{
-    width: 50vh;
-    height: 50vh;
+    width: 65vh;
+    height: 65vh;
 
-    transition: 0.5s;
+    transition: 1s;
 }
 
 /* configurações da página de login */
