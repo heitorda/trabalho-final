@@ -69,6 +69,42 @@
         </div>
     </div>
 
+     <!-- carrinho -->
+     <script>
+        function addToCart(productName, productPrice, quantity) {
+
+        if (typeof(Storage) !== "undefined") {
+        console.log("localStorage está disponível"); 
+
+        // Verificar se a quantidade foi recebida corretamente 
+        console.log("Produto:", productName, "Quantidade:", quantity);
+
+        let cart = JSON.parse(localStorage.getItem('cart')) || []; 
+
+        const existingProduct = cart.find(item => item.name  === productName);
+
+        if (existingProduct) {
+        existingProduct.quantity += parseInt(quantity);
+
+        }   else {
+        cart.push({
+        name: productName, 
+        price: productPrice, 
+        quantity: parseInt(quantity) 
+        });
+        }
+        // Salvar os dados no localStorage
+        localStorage.setItem('cart', JSON.stringify(cart)); 
+        console.log("Produto adicionado:", productName);
+        console.log("Carrinho atualizado:", cart); 
+
+        alert (`${productName} adicionado ao carrinho!`); 
+        } else {
+        alert("localStorage não é suportado neste navegador.");
+        }
+        }
+    </script>
+
     <!-- começo do footer -->
      <footer>
         <div id="Contato">
