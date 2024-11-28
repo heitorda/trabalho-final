@@ -54,6 +54,7 @@ if (!isset($_SESSION['email'])) {
 <div class="produtos">
     <div class="produto">
         <img src="../site/imagens/narquile 3.png" alt="narquile 3">
+        <h1>produto 1</h1>
         <label for="qtde1">Quantidade:</label>
         <input type="number" id="qtde1" name="qtde1" min="1" max="20" value="1" />
         <p>Preço: R$130,00</p>
