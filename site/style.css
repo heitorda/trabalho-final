@@ -21,11 +21,16 @@ header {
 }
 
 #logo {
-    width: 500px; /* Define o tamanho da logo */
-    height: 500px;
+    width: auto; /* Define o tamanho da logo */
+    height: auto;
     background: rgba(0, 0, 0, 0) url(imagens/logofuu.png) center center;
     background-size: cover;
     border-radius: 50%; /* Deixa a logo redonda */
+}
+
+#logo > a > img{ 
+    width: 50vh;
+    height: 30vh;
 }
 
 #infodousuario {
