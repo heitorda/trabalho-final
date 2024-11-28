@@ -5,32 +5,50 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tela de login</title>
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+ 
+ 
 </head>
 <body>
     <!-- header -->
     <header>
          <!-- logo da empresa -->
-         <div id="logo"><a href="index.html"></a></div>
+         <div id="logo"></div>
+         
         </header>
-    <div class="login-container">
-        <form action="testLogin.php" method="POST" id="login">
-            <h1>Login</h1>
+   
+        <!-- Bloco de Login -->
+        <div class="login-container">
+            <h2>Faça o seu cadastro</h2>
+            <form action="#" method="post">
+                <div class="input-group">
+                    <label for="NOME">Nome</label>
+                    <input type="NOME" id="NOME" name="NOME" required placeholder="NOME">
+                </div>
+                <div class="input-group">
+            <form action="#" method="post">
+   
+                <div class="input-group">
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" name="email" required placeholder="Digite seu e-mail">
+                </div>
+   
+                <div class="input-group">
+                    <label for="password">Senha</label>
+                    <input type="password" id="password" name="password" required placeholder="Digite sua senha">
+                </div>
+                <p>já tem seu cadastro? <a href="login.html">Entre aqui!</a></p>
+                <div class="login-btn"><input type="submit" value="Cadastra-se"></div>
 
-            <input type="text" name="email" placeholder="Email">
-            <br><br>
-            <input type="password" name="senha" placeholder="Senha">
-            <br><br>
-            <p>já tem seu cadastro? <a href="cadasto.php    ">Entre aqui!</a></p>
-            <br><br>
-            <input class="inputSubmit" type="submit" name="submit" value="Enviar">
-        </form>
-    </div>
-    <a href="index.html"   >
+            </form>
+        </div>
+    </form>
+</div>
+<a href="index.html"   >
     <i class="fas fa-home"></i>
 </a>
 <footer>
@@ -49,6 +67,6 @@
 
         </div>
     </footer>
-    
+
 </body>
 </html>
