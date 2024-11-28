@@ -180,7 +180,7 @@ form#login > input{
 
 .login-container {
     width: 50vh;
-    margin: 10vh auto 22.7vh auto;
+    margin: 10vh auto 25vh auto;
 }
 /* Estilo do título */
 .login-container h2 {
@@ -189,7 +189,6 @@ form#login > input{
     margin-bottom: 20px;
     font-size: 28px;
     color: #333;
-    wdi
 }
 
 /* Grupos de entrada de dados */
