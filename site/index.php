@@ -1,3 +1,15 @@
+<?php
+session_start(); // Continua a sessão
+
+// Verifica se o usuário está logado
+if (!isset($_SESSION['email'])) {
+    // Se não estiver logado, redireciona para a página de login
+    header("Location: login.html");
+    exit();
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -18,7 +30,7 @@
     <!-- logo da empresa -->
     <div id="logo"><a href="index.html"></a></div>
     <div id="infodousuario">
-        <a href="#">
+        <a href="carrinho.html">
             <i class="fas fa-shopping-cart"></i> Carrinho
         </a>
         

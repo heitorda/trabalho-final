@@ -1,11 +1,14 @@
 <?php
 $host = 'localhost';
 $usuario = 'root';
-$senha = '';
+$senha = ''; // Alterar para a senha correta, se houver
 $banco = 'tabacaria';
 
-$conexao = mysqli_connect('localhost','root','usbw','tabacaria');
-mysqli_set_charset($conexao, 'utf8');
-if($conexao->connect_error)
+// Estabelecendo a  conexão
+$conexao = mysqli_connect($host, $usuario, $senha, $banco);
 
+// Verificando a conexão
+if (!$conexao) {
+    die("Falha na conexão: " . mysqli_connect_error());
+}
 ?>

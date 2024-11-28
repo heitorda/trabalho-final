@@ -37,7 +37,7 @@
 
     // verifica se não houver erro - neste caso chama a include para inserir os dados
     if ($erro == 0) {
-        echo "todos os dados foram digitados corretamente. <br>";
+        echo "";
         include 'insere.inc.php';
     }
    ?>

@@ -48,7 +48,7 @@
         </div>
     </form>
 </div>
-<a href="index.html"   >
+<a href="index.php">
     <i class="fas fa-home"></i>
 </a>
 <footer>
