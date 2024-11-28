@@ -1,6 +1,6 @@
 
 --
-create database tabacaria ;
+create database tabacaria;
 use tabacaria ;
 CREATE TABLE `login` (
   `id` int(11) NOT NULL,

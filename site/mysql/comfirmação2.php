@@ -1,40 +1,25 @@
 <?php
-    session_start();
-    // print_r($_REQUEST);
-    if(isset($_POST['submit']) && !empty($_POST['email']) && !empty($_POST['senha']))
-    {
-        // Acessa
-        include_once('config.php');
-        $email = $_POST['email'];
-        $senha = $_POST['senha'];
+session_start();
+include 'conexao.php';
 
-        // print_r('Email: ' . $email);
-        // print_r('<br>');
-        // print_r('Senha: ' . $senha);
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $email = $_POST['email'];
+    $senha = md5($_POST['senha']); // Use bcrypt para maior segurança
 
-        $sql = "SELECT * FROM usuarios WHERE email = '$email' and senha = '$senha'";
+    $sql = "SELECT * FROM usuarios WHERE email = ? AND senha = ?";
+    $stmt = $conexao->prepare($sql);
+    $stmt->bind_param("ss", $email, $senha);
+    $stmt->execute();
+    $resultado = $stmt->get_result();
 
-        $result = $conexao->query($sql);
-
-        // print_r($sql);
-        // print_r($result);
-
-        if(mysqli_num_rows($result) < 1)
-        {
-            unset($_SESSION['email']);
-            unset($_SESSION['senha']);
-            header('Location: login.php');
-        }
-        else
-        {
-            $_SESSION['email'] = $email;
-            $_SESSION['senha'] = $senha;
-            header('Location: corpo.php');
-        }
+    if ($resultado->num_rows > 0) {
+        $usuario = $resultado->fetch_assoc();
+        $_SESSION['usuario_id'] = $usuario['id'];
+        $_SESSION['usuario_nome'] = $usuario['nome'];
+        header("Location: painel.php");
+        exit;
+    } else {
+        echo "E-mail ou senha inválidos.";
     }
-    else
-    {
-        // Não acessa
-        header('Location: login.php');
-    }
+}
 ?>
