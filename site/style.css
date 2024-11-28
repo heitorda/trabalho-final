@@ -220,6 +220,11 @@ form#login{
     transition: background-color 0.3s ease;
 }
 
+.login-btn > a{
+    text-decoration: none;
+    color: white;
+}
+
 .login-btn:hover {
     background-color: #5c7181;
 }
