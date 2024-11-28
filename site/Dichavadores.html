@@ -42,69 +42,58 @@
         <div class="produto">
             <img src="../site/imagens/dichavador6.webp" alt="narquile">
             <h1></h1>
-            <label for="qtde1">Quantidade:</label>
-            <input type="number" name="qtdel" min="1" max="20" value="1" />
-            <input type="number" id="qtde1" name="qtde1" min="1" max="20" value="1" />
+            <label for="qtde19">Quantidade:</label>
+            <input type="number" id="qtde19" name="qtde19" min="1" max="20" value="1" />
             <p>preço: R$40,00</p>
-            <button onclick="addtocart('produto 6', 60, document.querySelector('#qtde6').value)">adicionar ao carrinho</button>
-            <button onclick="addtocart('produto 18', 40, document.querySelector('#qtde19').value)">adicionar ao carrinho</button>
+            <button onclick="addToCart('produto 18', 40, document.querySelector('#qtde19').value)">adicionar ao carrinho</button>
         </div>
         <!-- produto 2 -->
         <div class="produto">
             <img src="../site/imagens/dichador5.jpeg" alt="narquile">
             <h1></h1>
-            <label for="qtde1">Quantidade:</label>
-            <input type="number" name="qtdel" min="1" max="20" value="1" />
-            <input type="number" id="qtde1" name="qtde1" min="1" max="20" value="1" />
+            <label for="qtde20">Quantidade:</label>
+            <input type="number" id="qtde20" name="qtde20" min="1" max="20" value="20" />
             <p>preço: R$19,99</p>
-            <button onclick="addtocart('produto 6', 60, document.querySelector('#qtde6').value)">adicionar ao carrinho</button>
-            <button onclick="addtocart('produto 19', 20, document.querySelector('#qtde20').value)">adicionar ao carrinho</button>
+            <button onclick="addToCart('produto 20', 20, document.querySelector('#qtde20').value)">adicionar ao carrinho</button>
         </div>
         <!-- produto 3 -->
         <div class="produto">
             <img src="../site/imagens/dichavador4.jpeg" alt="narquile">
             <h1></h1>
-            <label for="qtde1">Quantidade:</label>
-            <input type="number" name="qtdel" min="1" max="20" value="1" />
-            <input type="number" id="qtde1" name="qtde1" min="1" max="20" value="1" />
+            <label for="qtde21">Quantidade:</label>
+            <input type="number" id="qtde21" name="qtde21" min="1" max="20" value="1" />
             <p>preço: R$23,99</p>
-            <button onclick="addtocart('produto 6', 60, document.querySelector('#qtde6').value)">adicionar ao carrinho</button>
-            <button onclick="addtocart('produto 20', 24, document.querySelector('#qtde21').value)">adicionar ao carrinho</button>
+            <button onclick="addToCart('produto 21', 24, document.querySelector('#qtde21').value)">adicionar ao carrinho</button>
         </div>
         <!-- produto 4 -->
         <div class="produto">
             <img src="../site/imagens/dichavador3.jpeg" alt="seda">
             <h1></h1>
             <label for="qtde1">Quantidade:</label>
-            <input type="number" name="qtdel" min="1" max="20" value="1" />
             <input type="number" id="qtde1" name="qtde1" min="1" max="20" value="1" />
             <p>preço: R$23,99</p>
-            <button onclick="addtocart('produto 6', 60, document.querySelector('#qtde6').value)">adicionar ao carrinho</button>
-            <button onclick="addtocart('produto 21', 24, document.querySelector('#qtde22').value)">adicionar ao carrinho</button>
+            <button onclick="addToCart('produto 21', 24, document.querySelector('#qtde22').value)">adicionar ao carrinho</button>
         </div>
         <!-- produto 5 -->
         <div class="produto">
             <img src="../site/imagens/dichavador2.jpeg" alt="">
             <h1></h1>
             <label for="qtde1">Quantidade:</label>
-            <input type="number" name="qtdel" min="1" max="20" value="1" />
             <input type="number" id="qtde1" name="qtde1" min="1" max="20" value="1" />
             <p>preço: R$30,79</p>
-            <button onclick="addtocart('produto 6', 60, document.querySelector('#qtde6').value)">adicionar ao carrinho</button>
-            <button onclick="addtocart('produto 22', 30.79, document.querySelector('#qtde23').value)">adicionar ao carrinho</button>
+            <button onclick="addToCart('produto 22', 30.79, document.querySelector('#qtde23').value)">adicionar ao carrinho</button>
         </div>
         <!-- produto 6 -->
         <div class="produto">
             <img src="../site/imagens/dichavador1.jpeg" alt="">
             <h1></h1>
-            <label for="qtde1">Quantidade:</label>
-            <input type="number" name="qtdel" min="1" max="20" value="1" />
-            <input type="number" id="qtde1" name="qtde1" min="1" max="20" value="1" />
+            <label for="qtde24">Quantidade:</label>
+            <input type="number" id="qtde24" name="qtde24" min="1" max="20" value="1" />
             <p>preço: R$55,00</p>
-            <button onclick="addtocart('produto 6', 60, document.querySelector('#qtde6').value)">adicionar ao carrinho</button>
-            <button onclick="addtocart('produto 23', 55, document.querySelector('#qtde24').value)">adicionar ao carrinho</button>
+            <button onclick="addToCart('produto 23', 55, document.querySelector('#qtde24').value)">adicionar ao carrinho</button>
         </div>
     </div>  
+
       <!-- carrinho -->
       <script>
         function addToCart(productName, productPrice, quantity) {
