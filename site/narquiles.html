@@ -47,7 +47,7 @@
             <label for=""></label>
             <input type="number" name="qtdel" min="1" max="20" value="1" />
             <p>preço: R$155,00</p>
-            <button onclick="addtocart('produto 6', 60, document.querySelector('input[name=qtde6]').value)">adicionar ao carrinho</button>
+            <button onclick="addtocart('produto 6', 60, document.querySelector('#qtde6').value)">adicionar ao carrinho</button>
         </div>
         <!-- produto 2 -->
         <div class="produto">
@@ -56,7 +56,7 @@
             <label for=""></label>
             <input type="number" name="qtdel" min="1" max="20" value="1" />
             <p>preço: R$199,99</p>
-            <button onclick="addtocart('produto 6', 60, document.querySelector('input[name=qtde6]').value)">adicionar ao carrinho</button>
+            <button onclick="addtocart('produto 6', 60, document.querySelector('#qtde6').value)">adicionar ao carrinho</button>
         </div>
         <!-- produto 3 -->
         <div class="produto">
@@ -65,7 +65,7 @@
             <label for=""></label>
             <input type="number" name="qtdel" min="1" max="20" value="1" />
             <p>preço: R$130,00</p>
-            <button onclick="addtocart('produto 6', 60, document.querySelector('input[name=qtde6]').value)">adicionar ao carrinho</button>
+            <button onclick="addtocart('produto 6', 60, document.querySelector('#qtde6').value)">adicionar ao carrinho</button>
         </div>
         <!-- produto 4 -->
         <div class="produto">
@@ -74,7 +74,7 @@
             <label for=""></label>
             <input type="number" name="qtdel" min="1" max="20" value="1" />
             <p>preço: R$135,73</p>
-            <button onclick="addtocart('produto 6', 60, document.querySelector('input[name=qtde6]').value)">adicionar ao carrinho</button>
+            <button onclick="addtocart('produto 6', 60, document.querySelector('#qtde6').value)">adicionar ao carrinho</button>
         </div>
         <!-- produto 5 -->
         <div class="produto">
@@ -83,7 +83,7 @@
             <label for=""></label>
             <input type="number" name="qtdel" min="1" max="20" value="1" />
             <p>preço: R$75,00</p>
-            <button onclick="addtocart('produto 6', 60, document.querySelector('input[name=qtde6]').value)">adicionar ao carrinho</button>
+            <button onclick="addtocart('produto 6', 60, document.querySelector('#qtde6').value)">adicionar ao carrinho</button>
         </div>
         <!-- produto 6 -->
         <div class="produto">
@@ -92,43 +92,45 @@
             <label for=""></label>
             <input type="number" name="qtdel" min="1" max="20" value="1" />
             <p>preço: R$123,99</p>
-            <button onclick="addtocart('produto 6', 60, document.querySelector('input[name=qtde6]').value)">adicionar ao carrinho</button>
+            <button onclick="addtocart('produto 6', 60, document.querySelector('#qtde6').value)">adicionar ao carrinho</button>
         </div>
     </div>
 
      <!-- carrinho -->
      <script>
         function addToCart(productName, productPrice, quantity) {
-
-        if (typeof(Storage) !== "undefined") {
-        console.log("localStorage está disponível"); 
-
-        // Verificar se a quantidade foi recebida corretamente 
-        console.log("Produto:", productName, "Quantidade:", quantity);
-
-        let cart = JSON.parse(localStorage.getItem('cart')) || []; 
-
-        const existingProduct = cart.find(item => item.name  === productName);
-
-        if (existingProduct) {
-        existingProduct.quantity += parseInt(quantity);
-
-        }   else {
-        cart.push({
-        name: productName, 
-        price: productPrice, 
-        quantity: parseInt(quantity) 
-        });
-        }
-        // Salvar os dados no localStorage
-        localStorage.setItem('cart', JSON.stringify(cart)); 
-        console.log("Produto adicionado:", productName);
-        console.log("Carrinho atualizado:", cart); 
-
-        alert (`${productName} adicionado ao carrinho!`); 
-        } else {
-        alert("localStorage não é suportado neste navegador.");
-        }
+            if (typeof(Storage) !== "undefined") {
+                console.log("localStorage está disponível");
+    
+                // Verificar se a quantidade foi recebida corretamente
+                console.log("Produto:", productName, "Quantidade:", quantity);
+    
+                let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    
+                // Verifica se o produto já está no carrinho
+                const existingProduct = cart.find(item => item.name === productName);
+    
+                if (existingProduct) {
+                    // Se o produto já existe no carrinho, atualiza a quantidade
+                    existingProduct.quantity += parseInt(quantity);
+                } else {
+                    // Se não existe, adiciona o novo produto
+                    cart.push({
+                        name: productName,
+                        price: productPrice,
+                        quantity: parseInt(quantity)
+                    });
+                }
+    
+                // Salva o carrinho no localStorage
+                localStorage.setItem('cart', JSON.stringify(cart));
+                console.log("Produto adicionado:", productName);
+                console.log("Carrinho atualizado:", cart);
+    
+                alert(`${productName} adicionado ao carrinho!`);
+            } else {
+                alert("localStorage não é suportado neste navegador.");
+            }
         }
     </script>
 
