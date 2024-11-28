@@ -22,5 +22,18 @@ if (!empty($data)) {
         
         $sql = "INSERT INTO vendas (produto, quantidade, preco_unitario, total)
         VALUES ('$produto, $quantidade,  $preço_unitario, $total)";
+        
+        if ($conn->query($sql) === true) {
+            echo "venda registrada com sucesso!";
+        } else {
+            echo "erro ao registrar venda: " . $conn->error;
+        }
     }
+} else {
+    echo "Nenhum dado recibido!";
 }
+
+// fechar conexão
+
+$conn->close();
+?>
