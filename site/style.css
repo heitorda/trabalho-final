@@ -69,20 +69,6 @@ header {
     color: #007BFF;
 }
 
-/* configuração da barra de pesquisa */
-
-#search-bar input {
-    width: 100%;
-    max-width: 500%;
-    padding: 8px 12px;
-    border: 1px solid #ccc;
-    border-radius: 20px;
-    font-size: 200%;
-    margin-left: -20%;
-}
-
-
-
 /* nav  */
 nav {
     background-color: #6F8695;
@@ -111,6 +97,18 @@ nav > a:hover {
 
     transition: 0.5s;
 }
+
+nav a:first-child {
+    font-size: 24px; /* Aumenta o tamanho do ícone */
+    color: #333; /* Define a cor do ícone */
+    margin-right: 10px; /* Dá um pouco de espaço após o ícone */
+    text-decoration: none; /* Remove sublinhado */
+}
+
+nav a:first-child:hover {
+    color: #007bff; /* Altera a cor ao passar o mouse */
+}
+
 
 /* Produtos */
 div.produtos {
