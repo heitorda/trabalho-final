@@ -219,6 +219,28 @@ div.produto:hover{
     background-color: #5c7181;
 }
 /* carrinho de compra */
+#bodycarrinho{
+    background-image: url(imagens/Smoke_005.jpg);
+    background-position: center bottom;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+#carrinho{
+    margin: 10vh auto 25vh auto;
+    padding: 5px;
+    width: 740px;
+
+    background-color: rgba(216, 216, 216, 0.811);
+
+    border: none;
+    border-radius: 10px;
+
+    box-shadow: 25px 18px 43px -1px rgba(0, 0, 0, 0.463);   
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2em;
+}
+
 .product{
     border: 1px solid rgb(255, 255, 255);
     padding: 10px;
@@ -228,6 +250,13 @@ div.produto:hover{
     margin-top: 20px;
     border-top: 2px solid black;
     padding-top: 10px;
+}
+
+#pagar{
+    margin: auto;
+    padding: 5px;
+
+    font-size: 1em;
 }
 
 
