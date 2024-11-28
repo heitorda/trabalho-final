@@ -7,59 +7,78 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h2>carrinho de compras</h2>
+
+    <div>
+        <h2>Carrinho de Compras</h2>
     <form method="POST" action="cadvenda.php">
         <div id="Cart">
             <ul id="cart-items"></ul>
             <p id="total">Total: R$ 0,00</p>
-            <p><button name="pagar">PAGAR</button></p>
+            <p><button name="pagar" type="submit">PAGAR</button></p>
         </div>
     </form>
+    </div>
+
+    
 
     <script>
-
-        document.addEventListener('DOMcontentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function() {
             let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
+            // Função para carregar os itens do carrinho
             function loadCart() {
                 const cartItems = document.getElementById('cart-items');
                 const totalElement = document.getElementById('total');
                 let total = 0;
 
-                cartItems.innerHTML = ''; // limpar o carrinho
+                cartItems.innerHTML = ''; // Limpar o carrinho antes de atualizar
 
-                if (cart.length ===0) {
+                if (cart.length === 0) {
                     cartItems.innerHTML = '<li>Carrinho vazio</li>';
-                    totalElement.textContent = 'total: R$ 0,00';
+                    totalElement.textContent = 'Total: R$ 0,00';
                     return;
                 }
 
+                // Exibir cada item do carrinho
                 cart.forEach(item => {
-                    const listitem = document.createElement('li');
-                    listitem.textContent = `$(item.name) - quantidade: $(item.quantity) - preço: R$ 
-                    ${(item.price * item.quantity).toFixed(2)}`;
-                    cartItems.appendChild(listitem);
+                    const listItem = document.createElement('li');
+                    listItem.textContent = `${item.name} - Quantidade: ${item.quantity} - Preço: R$ ${(item.price * item.quantity).toFixed(2)}`;
+                    cartItems.appendChild(listItem);
+                    total += item.price * item.quantity; // Acumula o preço total
                 });
 
-                totalElement.textContent = 'total: R$ $ {total.toFixed(2)}';
+                // Atualiza o total do carrinho
+                totalElement.textContent = `Total: R$ ${total.toFixed(2)}`;
             }
 
+            // Carregar o carrinho ao carregar a página
             loadCart();
 
-            document.querySelector('button[name="pagar"]').addEventListener('click', function(event){
+            // Enviar os dados do carrinho para o servidor ao clicar no botão "Pagar"
+            document.querySelector('button[name="pagar"]').addEventListener('click', function(event) {
                 event.preventDefault();
 
-                alert('compra realizada com sucesso!');
+                if (cart.length === 0) {
+                    alert('O carrinho está vazio! Não é possível finalizar a compra.');
+                    return;
+                }
 
-                const Xhr = new XMLHttpRequest();
-                Xhr.open("POST", "cadvenda.php", true);
-                Xhr.setRequestHeader("content.Type", "application/json;charset=UTF-8");
-                Xhr.onreadystatechange = function () {
-                    if (Xhr.readyState === 4 && Xhr.status === 200) {
-                        console.log("dados enviados com sucesso")
+                alert('Compra realizada com sucesso!');
+
+                // Enviar os dados para o servidor (cadvenda.php)
+                const xhr = new XMLHttpRequest();
+                xhr.open("POST", "cadvenda.php", true);
+                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+                xhr.onreadystatechange = function () {
+                    if (xhr.readyState === 4 && xhr.status === 200) {
+                        console.log("Dados enviados com sucesso.");
                     }
                 };
-                Xhr.send(JSON.stringify(cart));
+
+                // Enviar o conteúdo do carrinho como JSON
+                xhr.send(JSON.stringify(cart));
+
+                // Limpar o carrinho e atualizar a interface
                 localStorage.removeItem('cart');
                 cart = [];
                 loadCart();
