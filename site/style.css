@@ -4,6 +4,11 @@
 /* configurações gerais */
 *{
     margin: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+p{
+    margin: 5px;
 }
 
 
@@ -21,8 +26,8 @@ header {
 }
 
 #logo {
-    width: auto; /* Define o tamanho da logo */
-    height: auto;
+    width: 42vh;
+    height: 23vh;
     background: rgba(0, 0, 0, 0) url(imagens/logofuu.png) center center;
     background-size: cover;
     border-radius: 50%; /* Deixa a logo redonda */
@@ -209,7 +214,7 @@ form#login{
 
 /* Estilo do botão */
 .login-btn {
-    width: 100%;
+    width: 50vh;
     padding: 12px;
     background-color: #6F8695;
     color: white;
@@ -220,9 +225,15 @@ form#login{
     transition: background-color 0.3s ease;
 }
 
-.login-btn > a{
-    text-decoration: none;
+.login-btn > input{
+    width: 50vh;
+    background-color: #6F8695;
     color: white;
+    border: none;
+}
+
+.login-bnt > input:hover{
+    background-color: #5c7181;
 }
 
 .login-btn:hover {
