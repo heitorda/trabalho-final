@@ -29,8 +29,8 @@ header {
 }
 
 #logo > a > img{ 
-    width: 50vh;
-    height: 30vh;
+    width: 42vh;
+    height: 24vh;
 }
 
 #infodousuario {
@@ -128,7 +128,7 @@ div.produtos {
     width: 50vh; /* Largura do placeholder */
     max-width: 60vh;
     height: 50vh; /* Altura do placeholder */
-    margin-bottom: 35px;
+    margin-bottom: 70px;
     box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.2);
     border-radius: 10px; /* Bordas arredondadas */
     transition: 0.5s;
