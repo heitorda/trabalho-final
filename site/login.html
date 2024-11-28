@@ -2,42 +2,33 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página de Login</title>
+    <title>Tela de login</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
 </head>
 <body>
-    <!-- começo do header -->
+    <!-- header -->
     <header>
         <!-- logo da empresa -->
         <div id="logo"><a href="index.html"><img src="imagens/logofuu.jfif" alt=""></a></div>
-
-        <div id="voltar"><a href="index.html">volte para página principal</a></div>
-    </header>
-
-    <!-- Bloco de Login -->
-    <div class="login-container">
-        <h2>Faça o Login</h2>
-        <form action="#" method="post">
-            <div class="input-group">
-                <label for="NOME">NOME</label>
-                <input type="NOME" id="NOME" name="NOME" required placeholder="NOME">
-            </div>
-            <div class="input-group">
-        <form action="#" method="post">
-
-            <div class="input-group">
-                <label for="email">E-mail</label>
-                <input type="email" id="email" name="email" required placeholder="Digite seu e-mail">
-            </div>
-
-            <div class="input-group">
-                <label for="password">Senha</label>
-                <input type="password" id="password" name="password" required placeholder="Digite sua senha">
-            </div>
-            <div><a href="index.html"><button type="submit" class="login-btn">Entrar</button></a></div>
+    </header>   
+        <!-- fim do header -->
+    <a href="../site/index.html">Voltar</a>
+    <div>
+        <h1>Login</h1>
+        <form action="login.php" method="POST">
+            <input type="text" name="email" placeholder="Email">
+            <br><br>
+            <input type="password" name="senha" placeholder="Senha">
+            <br><br>
+            <a href="index.html"><input class="inputSubmit" type="submit" name="submit" value="Enviar"></a>
         </form>
     </div>
-
 </body>
 </html>
