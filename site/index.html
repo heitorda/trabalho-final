@@ -114,11 +114,11 @@
         existingProduct.quantity += parseInt(quantity);
 
         }   else {
-        cart.push({
-        name: productName, 
-        price: productPrice, 
-        quantity: parseInt(quantity) 
-        });
+            cart.push({
+                name: productName, 
+                price: productPrice, 
+                quantity: parseInt(quantity) 
+            });
         }
         // Salvar os dados no localStorage
         localStorage.setItem('cart', JSON.stringify(cart)); 
@@ -128,7 +128,7 @@
         alert (`${productName} adicionado ao carrinho!`); 
         } else {
         alert("localStorage não é suportado neste navegador.");
-        }
+          }
         }
     </script>
 
