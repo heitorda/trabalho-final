@@ -29,7 +29,7 @@
         {
             $_SESSION['email'] = $email;
             $_SESSION['senha'] = $senha;
-            header('Location: sistema.php');
+            header('Location: corpo.php');
         }
     }
     else
