@@ -14,7 +14,7 @@ p{
 
 /* Header */
 header {
-    position: sticky;
+    position:static ;
     top: 0; /* Faz o header "grudar" no topo ao rolar a página */
     display: flex; /* Torna o header um contêiner flexível */
     justify-content: space-between; /* Alinha os itens: logo à esquerda, links à direita */
@@ -130,6 +130,7 @@ div.produtos {
 
 /* Placeholder para os produtos */
  div.produto {
+    position: static;
     width: 50vh; /* Largura do placeholder */
     max-width: 60vh;
     height: 50vh; /* Altura do placeholder */

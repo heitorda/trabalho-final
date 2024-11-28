@@ -9,7 +9,6 @@ if (!isset($_SESSION['email'])) {
 }
 
 ?>
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -30,8 +29,7 @@ if (!isset($_SESSION['email'])) {
     <!-- logo da empresa -->
     <div id="logo"><a href="index.html"></a></div>
     <div id="infodousuario">
-    <a href="carrinho.html">
-        <a href="../site/carrinho.html">
+        <a href="carrinho.html">
             <i class="fas fa-shopping-cart"></i> Carrinho
         </a>
         
