@@ -37,7 +37,7 @@ if (!isset($_SESSION['email'])) {
     </div>
 </header>
 <nav>
-    <a href="index.html">
+    <a href="index.php">
         <i class="fas fa-home"></i>
     </a>
     <a href="../site/sedas.html">Seda</a>
