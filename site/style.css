@@ -174,7 +174,7 @@ form#login{
 
 .login-container {
     width: 50vh;
-    margin: 10vh auto auto auto;
+    margin: 10vh auto 22.7vh auto;
 }
 /* Estilo do título */
 .login-container h2 {
@@ -330,4 +330,10 @@ footer h1 {
 
 footer > div{
     width: 14   0px;
+}
+
+
+i.fas.fa-home {
+    font-size: 60px;
+    margin: 20px;
 }
