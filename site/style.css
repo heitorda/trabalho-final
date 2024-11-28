@@ -157,7 +157,7 @@ div.produto:hover{
 
 /* configurações da página de login */
 /* Estilo do container de login */
-.login-container {
+form{
     width: 100%;
     max-width: 400px;
     margin: 50px auto;
@@ -224,39 +224,41 @@ div.produto:hover{
     background-position: center bottom;
     background-size: cover;
     background-repeat: no-repeat;
+
+    height: 100vh;
 }
 #carrinho{
-    margin: 10vh auto 25vh auto;
-    padding: 5px;
-    width: 740px;
+    background-color: rgba(19, 15, 15, 0.6);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    padding: 80px;
+    border-radius: 15px;
+    color: #fff;
+}
 
-    background-color: rgba(216, 216, 216, 0.811);
-
+input{
+    padding: 15px;
     border: none;
+    outline: none;
+    font-size: 15px;
+    width: 300px;
+}
+
+.inputSubmit{
+    background-color: dodgerblue;
+    border: none;
+    padding: 15px;
+    width: 100%;
     border-radius: 10px;
-
-    box-shadow: 25px 18px 43px -1px rgba(0, 0, 0, 0.463);   
-
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 2em;
+    color: white;
+    font-size: 15px;
+    
 }
-
-.product{
-    border: 1px solid rgb(255, 255, 255);
-    padding: 10px;
-    margin-bottom: 10px;
-}
-#cart{
-    margin-top: 20px;
-    border-top: 2px solid black;
-    padding-top: 10px;
-}
-
-#pagar{
-    margin: auto;
-    padding: 5px;
-
-    font-size: 1em;
+.inputSubmit:hover{
+    background-color: deepskyblue;
+    cursor: pointer;
 }
 
 
