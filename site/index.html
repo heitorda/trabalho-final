@@ -17,7 +17,7 @@
     <!-- logo da empresa -->
     <div id="logo"><a href="index.html"><img src="imagens/logofuu.jfif" alt=""></a></div>
     <div id="infodousuario">
-        <a href="carrinho.html">
+        <a href="#">
             <i class="fas fa-shopping-cart"></i> Carrinho
         </a>
         
@@ -153,43 +153,6 @@
     </div>
 </div>
 
-
-
-<script>
-    function addToCart(productName, productPrice, quantity) {
-        if (typeof(Storage) !== "undefined") {
-            console.log("localStorage está disponível");
-
-            // Verificar se a quantidade foi recebida corretamente
-            console.log("Produto:", productName, "Quantidade:", quantity);
-
-            let cart = JSON.parse(localStorage.getItem('cart')) || [];
-
-            // Verifica se o produto já está no carrinho
-            const existingProduct = cart.find(item => item.name === productName);
-
-            if (existingProduct) {
-                // Se o produto já existe no carrinho, atualiza a quantidade
-                existingProduct.quantity += parseInt(quantity);
-            } else {
-                // Se não existe, adiciona o novo produto
-                cart.push({
-                    name: productName,
-                    price: productPrice,
-                    quantity: parseInt(quantity)
-                });
-            }
-
-            // Salva o carrinho no localStorage
-            localStorage.setItem('cart', JSON.stringify(cart));
-            console.log("Produto adicionado:", productName);
-            console.log("Carrinho atualizado:", cart);
-
-            alert(`${productName} adicionado ao carrinho!`);
-        } else {
-            alert("localStorage não é suportado neste navegador.");
-        }
-    }
 </script>
 
 
