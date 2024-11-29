@@ -1,3 +1,36 @@
+<?php
+session_start(); // Inicia ou continua a sessão
+include 'conecta_mysql.inc.php'; // Inclui a conexão com o banco de dados
+
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    $email = $conexao->real_escape_string($_POST['email']);
+    $senha = $_POST['password'];
+
+    // Verifica se o usuário existe no banco
+    $sql = "SELECT * FROM cadastro WHERE email = '$email'";
+    $resultado = $conexao->query($sql);
+
+    if ($resultado->num_rows > 0) {
+        $usuario = $resultado->fetch_assoc();
+
+        // Verifica a senha
+        if (password_verify($senha, $usuario['senha'])) {
+            // Salva os dados do usuário na sessão
+            $_SESSION['id'] = $usuario['id'];
+            $_SESSION['nome'] = $usuario['nome'];
+            $_SESSION['email'] = $usuario['email'];
+
+            // Redireciona para a página principal
+            header("Location: index.php");
+            exit();
+        } else {
+            $erro = "Senha incorreta.";
+        }
+    } else {
+        $erro = "Usuário não encontrado.";
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -21,25 +54,17 @@
         </header>
    
         <!-- Bloco de Login -->
-        <div class="login-container">
-            <h2>Faça o Login</h2>
-            <form action="#" method="post">     
-                <div class="input-group">
-            <form action="#" method="post">
-   
-                <div class="input-group">
-                    <label for="email">E-mail</label>
-                    <input type="email" id="email" name="email" required placeholder="Digite seu e-mail">
-                </div>
-   
-                <div class="input-group">
-                    <label for="password">Senha</label>
-                    <input type="password" id="password" name="password" required placeholder="Digite sua senha">
-                </div>
-                <p>não tem uma conta? <a href="cadastro.html">Cadastre-se Aqui!</a></p>
-                <div><button type="submit" class="login-btn"><a href="../site/pglogado.html">Entrar</a></button></div>
-
-</form>
+        <h1>Login</h1>
+    <?php if (!empty($erro)): ?>
+        <p style="color: red;"><?php echo $erro; ?></p>
+    <?php endif; ?>
+    <form method="POST" action="">
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" required><br><br>
+        <label for="password">Senha:</label><br>
+        <input type="password" id="password" name="password" required><br><br>
+        <button type="submit">Entrar</button>
+    </form>
 </div>
 </form>
 </div>
